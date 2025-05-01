@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "revive",
+  "version": "${version}",
+  "name": "Revive",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/revive/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "ru.mshq.revive.client.ReviveDataGenerator"
+    ],
+    "main": [
+      "ru.mshq.revive.Revive"
+    ]
+  },
+  "mixins": [
+    "revive.mixins.json",
+    {
+      "config": "revive.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
