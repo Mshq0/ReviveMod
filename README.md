@@ -19,7 +19,7 @@
   - Железный меч с зачарованиями "Проклятие утраты" и "Небесная кара 5"
   - Зачарованное золотое яблоко
   - Бутылочка (пустая)
-![Gentleman's set](https://prnt.sc/zS_8ekpOZFQV)
+![Gentleman's set]([https://prnt.sc/zS_8ekpOZFQV](https://media.discordapp.net/attachments/1348676323006218252/1370846997069828096/image.png?ex=6820fc41&is=681faac1&hm=ad0d890372304c3ff70efc52e9ef35a7e1116cc6529cd97e9fb973f6275d06e5&=&format=webp&quality=lossless))
 
 ### Механика забора крови
 1. Подготовка донора
@@ -33,8 +33,8 @@
    - С одного зачарованного золотого яблока можно получить только одну бутылочку крови.
    - После этого потребуется съесть новое яблоко, чтобы снова стать донором.
    - Если у донора остаётся всего одно сердечко здоровья, кровь брать нельзя.
-![Blooding](https://drive.google.com/file/d/184wwXrkxMjA3mLlr63ByLDQsQIR8HBc7/view?usp=sharing)
+![Blooding](https://media.discordapp.net/attachments/1348676323006218252/1370845946929483826/output_2.gif?ex=6820fb46&is=681fa9c6&hm=1fc33904e17ddb05a0120aa1dbdacd7de237277fdf99653fcbc69ae8d862909c&=)
   
 ### Воскрешение
 Нужно нажать по голове воскрешаемого игрока бутылочкой с кровью, в дальнейшем он воскреситься.
-![MiSide](https://drive.google.com/file/d/1PEwMqjgF66RTSYh5c_tzBqiamDQcqUBL/view?usp=sharing)
+![MiSide](https://media.discordapp.net/attachments/1348676323006218252/1370846347984371782/output.gif?ex=6820fba6&is=681faa26&hm=ca7efe9c3f1f4e00132008d4e997a93b70160815d2387a4e14b392a249634c89&=)
