@@ -35,9 +35,9 @@
    - После этого потребуется съесть новое яблоко, чтобы снова стать донором.
    - Если у донора остаётся всего одно сердечко здоровья, кровь брать нельзя.
 
-![Blooding](https://media.discordapp.net/attachments/1348676323006218252/1370846347984371782/output.gif?ex=6820fba6&is=681faa26&hm=ca7efe9c3f1f4e00132008d4e997a93b70160815d2387a4e14b392a249634c89&=)
+![Blooding](blob:https://yapx.ru/989515bf-3cdf-48d1-908c-71e3319d75f3)
   
 ### Воскрешение
 Нужно нажать по голове воскрешаемого игрока бутылочкой с кровью, в дальнейшем он воскреситься.
 
-![MiSide](https://media.discordapp.net/attachments/1348676323006218252/1370845946929483826/output_2.gif?ex=6820fb46&is=681fa9c6&hm=1fc33904e17ddb05a0120aa1dbdacd7de237277fdf99653fcbc69ae8d862909c&=)
+![MiSide](https://i.imgur.com/9R8Yac1.gif)
