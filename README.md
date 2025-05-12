@@ -20,7 +20,7 @@
   - Зачарованное золотое яблоко
   - Бутылочка (пустая)
 
-![Gentleman's set](https://media.discordapp.net/attachments/1348676323006218252/1370846997069828096/image.png?ex=6820fc41&is=681faac1&hm=ad0d890372304c3ff70efc52e9ef35a7e1116cc6529cd97e9fb973f6275d06e5&=&format=webp&quality=lossless)
+![Gentleman's set](https://imgur.com/a/yoratU6)
 
 ### Механика забора крови
 1. Подготовка донора
