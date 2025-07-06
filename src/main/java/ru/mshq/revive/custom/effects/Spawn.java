@@ -1,20 +1,17 @@
-package ru.mshq.revive.effects;
+package ru.mshq.revive.custom.effects;
 
 import net.minecraft.particle.DustParticleEffect;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.particle.SculkChargeParticleEffect;
-import net.minecraft.particle.ShriekParticleEffect;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Colors;
 
-import java.util.concurrent.TimeUnit;
+import java.util.Objects;
 
-public class SpawnEffect {
+public class Spawn {
     private static final double RADIUS = 1;
 
     public static void spawn(ServerPlayerEntity player) {
-        ServerWorld world = player.getServerWorld();
+        ServerWorld world = Objects.requireNonNull(player.getServer()).getOverworld();
 
         DustParticleEffect effect = new DustParticleEffect(Colors.CYAN, 1);
 
@@ -29,12 +26,7 @@ public class SpawnEffect {
                     0, 0, 0,
                     0.01
             );
-
-            try {
-                TimeUnit.NANOSECONDS.sleep(1);
-            } catch (InterruptedException e) {
-
-            }
+            
         }
     }
 }

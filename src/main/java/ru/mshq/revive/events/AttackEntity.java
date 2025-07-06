@@ -17,14 +17,17 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
-import ru.mshq.revive.effects.BloodingEffect;
-import ru.mshq.revive.items.BloodPotion;
+import ru.mshq.revive.SoundBox;
+import ru.mshq.revive.custom.effects.Bleeding;
+import ru.mshq.revive.custom.items.BloodPotion;
+
+import java.util.Objects;
+
+import static ru.mshq.revive.Revive.config;
 
 public class AttackEntity {
-    public static ActionResult execute(PlayerEntity player, World world, Hand hand, Entity entity, EntityHitResult result) {
+    public static ActionResult execute(PlayerEntity player, World world, Hand hand, Entity entity, EntityHitResult ignoredResult) {
         if (!(entity instanceof PlayerEntity targetPlayer) || !hand.equals(Hand.MAIN_HAND)
             || targetPlayer.isSpectator() || targetPlayer.isCreative()) {
             return ActionResult.PASS;
@@ -46,21 +49,7 @@ public class AttackEntity {
 
         if (isIronSword && ateEnchantedGoldenApple && hasCurseOfVanishing && hasSmiteV && hasGlassBottle) {
             if (!world.isClient) {
-                ServerWorld serverWorld = (ServerWorld) world;
-                BlockPos pos = player.getBlockPos();
-
-                Box area = new Box(
-                        pos.getX() - 20, pos.getY() - 20, pos.getZ() - 20,
-                        pos.getX() + 20, pos.getY() + 20, pos.getZ() + 20
-                );
-
-                for (PlayerEntity nearbyPlayer : serverWorld.getEntitiesByClass(
-                        PlayerEntity.class, area, p -> true
-                )) {
-                    nearbyPlayer.playSound(
-                            SoundEvents.ITEM_GLOW_INK_SAC_USE
-                    );
-                }
+                SoundBox.playAround((ServerWorld) world, player, SoundEvents.ITEM_GLOW_INK_SAC_USE);
             }
 
             targetPlayer.clearStatusEffects();
@@ -74,13 +63,13 @@ public class AttackEntity {
 
             double currentMaxHealth = targetPlayer.getAttributeValue(EntityAttributes.MAX_HEALTH);
 
-            if (currentMaxHealth <= 2) {
+            if (currentMaxHealth <= config.getMinHealth()) {
                 return ActionResult.SUCCESS;
             } else {
-                targetPlayer.getAttributeInstance(EntityAttributes.MAX_HEALTH)
-                        .setBaseValue(currentMaxHealth - 2);
+                Objects.requireNonNull(targetPlayer.getAttributeInstance(EntityAttributes.MAX_HEALTH))
+                        .setBaseValue(currentMaxHealth - config.getRemoveHealth());
 
-                BloodingEffect.spawn((ServerPlayerEntity) targetPlayer);
+                Bleeding.spawn((ServerPlayerEntity) targetPlayer);
                 ItemStack bloodPotion = BloodPotion.createBloodPotion();
 
                 player.setStackInHand(Hand.MAIN_HAND, Items.AIR.getDefaultStack());

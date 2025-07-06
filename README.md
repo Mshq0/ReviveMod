@@ -1,13 +1,13 @@
 # ReviveMod for Minecraft
-[![Version](https://img.shields.io/badge/ReviveMod-1.0-blue)](https://github.com/Mshq0/ReviveMod/releases/tag/v1.0)
+[![Version](https://img.shields.io/badge/ReviveMod-1.1-blue)](https://github.com/Mshq0/ReviveMod/releases/tag/v1.1)
 
 # RU
 **ReviveMod** — простейший по реализации и пользованию мод для воскрешения своих друзей в режиме хардкора.
 
 ## Требования к игре
-- Minecraft 1.21.4+
+- Minecraft 1.21.7+
 - Fabric 0.16.14+
-- Fabric API 0.119.2+
+- Fabric API 0.128.2+
 
 ## Важное
 1. Данный мод корректно работает на сервере [Fabric](https://fabricmc.net/use/server/), корректную работу мода через клиент не могу гарантировать.

@@ -7,7 +7,6 @@
   "authors": [],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/revive/icon.png",
   "environment": "server",
   "entrypoints": {
     "fabric-datagen": [

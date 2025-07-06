@@ -11,19 +11,18 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.GameMode;
 import net.minecraft.world.World;
-import ru.mshq.revive.effects.SpawnEffect;
-import ru.mshq.revive.items.BloodPotion;
+import ru.mshq.revive.SoundBox;
+import ru.mshq.revive.custom.effects.Spawn;
+import ru.mshq.revive.custom.items.BloodPotion;
 
 import java.util.Set;
 
@@ -60,9 +59,11 @@ public class UseBlock {
             return ActionResult.PASS;
         }
 
-        playSound(targetPlayer);
+        SoundEvent goatHornSound = Registries.SOUND_EVENT.get(Identifier.of("minecraft:item.goat_horn.sound.5"));
+        SoundBox.playAround((ServerWorld) world, player, goatHornSound);
+
         player.setStackInHand(hand, Items.GLASS_BOTTLE.getDefaultStack());
-        SpawnEffect.spawn(targetPlayer);
+        Spawn.spawn(targetPlayer);
 
         return ActionResult.SUCCESS;
     }
@@ -83,7 +84,7 @@ public class UseBlock {
         );
 
         player.teleport(
-                player.getServerWorld(),
+                player.getWorld(),
                 teleportPos.x,
                 teleportPos.y,
                 teleportPos.z,
@@ -92,24 +93,5 @@ public class UseBlock {
                 player.getPitch(),
                 true
         );
-    }
-
-    private static void playSound(ServerPlayerEntity player) {
-        ServerWorld serverWorld = player.getServerWorld();
-        BlockPos pos = player.getBlockPos();
-
-        Box area = new Box(
-                pos.getX() - 20, pos.getY() - 20, pos.getZ() - 20,
-                pos.getX() + 20, pos.getY() + 20, pos.getZ() + 20
-        );
-
-        SoundEvent goatHornSound = Registries.SOUND_EVENT.get(Identifier.of("minecraft:item.goat_horn.sound.5"));
-        for (PlayerEntity nearbyPlayer : serverWorld.getEntitiesByClass(
-                PlayerEntity.class, area, p -> true
-        )) {
-            nearbyPlayer.playSound(
-                    goatHornSound
-            );
-        }
     }
 }

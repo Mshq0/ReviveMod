@@ -1,14 +1,16 @@
-package ru.mshq.revive.effects;
+package ru.mshq.revive.custom.effects;
 
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 
-public class BloodingEffect {
+import java.util.Objects;
+
+public class Bleeding {
     public static final int BLOOD_COLOR = 0x8B0000;
 
     public static void spawn(ServerPlayerEntity player) {
-        ServerWorld world = player.getServerWorld();
+        ServerWorld world = Objects.requireNonNull(player.getServer()).getOverworld();
 
         DustParticleEffect effect = new DustParticleEffect(BLOOD_COLOR, 1.0f);
 
