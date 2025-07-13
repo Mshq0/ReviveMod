@@ -8,6 +8,7 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Rarity;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,6 +34,7 @@ public class BloodPotion {
 
         potion.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
         potion.set(DataComponentTypes.POTION_CONTENTS, potionContents);
+        potion.set(DataComponentTypes.RARITY, Rarity.UNCOMMON);
 
         return potion;
     }

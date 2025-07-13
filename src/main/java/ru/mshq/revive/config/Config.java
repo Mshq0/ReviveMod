@@ -15,6 +15,8 @@ public class Config {
     private Integer addHealth = 2;
     private Integer maxHealth = 20;
     private Integer minHealth = 2;
+    private Boolean spectatorMovement = true;
+    private String spectatorTitle = "You're dead";
 
     public static Config load(Path configPath) {
         Config config;
@@ -49,5 +51,13 @@ public class Config {
 
     public Integer getMinHealth() {
         return minHealth;
+    }
+
+    public Boolean getSpectatorMovement() {
+        return spectatorMovement;
+    }
+
+    public String getSpectatorTitle() {
+        return spectatorTitle;
     }
 }
