@@ -1,5 +1,5 @@
 # ReviveMod for Minecraft
-[![Version](https://img.shields.io/badge/ReviveMod-1.1-blue)](https://github.com/Mshq0/ReviveMod/releases/tag/v1.1)
+[![Version](https://img.shields.io/badge/ReviveMod-2.0-blue)](https://github.com/Mshq0/ReviveMod/releases/tag/v2.0)
 
 # RU
 **ReviveMod** — простейший по реализации и пользованию мод для воскрешения своих друзей в режиме хардкора.
