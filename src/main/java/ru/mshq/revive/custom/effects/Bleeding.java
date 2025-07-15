@@ -10,7 +10,7 @@ public class Bleeding {
     public static final int BLOOD_COLOR = 0x8B0000;
 
     public static void spawn(ServerPlayerEntity player) {
-        ServerWorld world = Objects.requireNonNull(player.getServer()).getOverworld();
+        ServerWorld world = Objects.requireNonNull(player.getWorld());
 
         DustParticleEffect effect = new DustParticleEffect(BLOOD_COLOR, 1.0f);
 

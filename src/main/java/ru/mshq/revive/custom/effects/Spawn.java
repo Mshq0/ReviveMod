@@ -11,7 +11,7 @@ public class Spawn {
     private static final double RADIUS = 1;
 
     public static void spawn(ServerPlayerEntity player) {
-        ServerWorld world = Objects.requireNonNull(player.getServer()).getOverworld();
+        ServerWorld world = Objects.requireNonNull(player.getWorld());
 
         DustParticleEffect effect = new DustParticleEffect(Colors.CYAN, 1);
 
@@ -26,7 +26,7 @@ public class Spawn {
                     0, 0, 0,
                     0.01
             );
-            
+
         }
     }
 }

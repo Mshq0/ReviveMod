@@ -54,7 +54,7 @@ public class UseBlock {
         }
 
         world.removeBlock(targetBlockEntity.getPos(), false);
-        teleportPlayerToBlock(targetPlayer, targetBlockEntity.getPos());
+        teleportPlayerToBlock(targetPlayer, targetBlockEntity.getPos(), (ServerWorld) world);
         if (!revivePlayer(targetPlayer)) {
             return ActionResult.PASS;
         }
@@ -76,7 +76,7 @@ public class UseBlock {
         return player.isSpectator() && player.changeGameMode(GameMode.SURVIVAL);
     }
 
-    private static void teleportPlayerToBlock(ServerPlayerEntity player, BlockPos blockPos) {
+    private static void teleportPlayerToBlock(ServerPlayerEntity player, BlockPos blockPos, ServerWorld world) {
         Vec3d teleportPos = new Vec3d(
                 blockPos.getX() + 0.5,
                 blockPos.getY(),
@@ -84,7 +84,7 @@ public class UseBlock {
         );
 
         player.teleport(
-                player.getWorld(),
+                world,
                 teleportPos.x,
                 teleportPos.y,
                 teleportPos.z,
